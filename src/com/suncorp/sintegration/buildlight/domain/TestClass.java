@@ -25,7 +25,7 @@ public class TestClass {
 	public static void main(String[] args) throws IOException {
 		BuildParser parser1 = new BuildParserJenkinsImpl();
 		
-		List<Job> jobs1 = parser1.checkStatus("ci.jenkins-ci.org", "fix-git-configuration-on-remote-slave-8");
+		//List<Job> jobs1 = parser1.checkStatus("ci.jenkins-ci.org", "fix-git-configuration-on-remote-slave-8");
 		//System.out.println("" + jobs.);
 		
 		BuildParser parser = new BuildParserJenkinsRegex();

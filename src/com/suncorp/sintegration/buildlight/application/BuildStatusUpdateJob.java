@@ -6,7 +6,7 @@ import java.util.Set;
 
 import com.suncorp.sintegration.buildlight.configuration.Configuration;
 import com.suncorp.sintegration.buildlight.domain.BuildParser;
-import com.suncorp.sintegration.buildlight.domain.BuildParserJenkinsImpl;
+import com.suncorp.sintegration.buildlight.domain.BuildParserFactory;
 import com.suncorp.sintegration.buildlight.domain.Job;
 import com.suncorp.sintegration.buildlight.domain.Job.BuildStatus;
 import com.suncorp.sintegration.buildlight.domain.Light;
@@ -29,7 +29,7 @@ public class BuildStatusUpdateJob {
 	public void update() throws IOException {
 		Set<Job> jobs = new HashSet<Job>();
 		for (String jenkinsJobName : this.jenkinsJobNames) {
-			BuildParser buildParser = new BuildParserJenkinsImpl();
+			BuildParser buildParser = BuildParserFactory.getParser(config);
 			jenkinsJobName = jenkinsJobName.trim();
 			jobs.addAll(buildParser.checkStatus(this.jenkinsUrl, jenkinsJobName));
 		}
