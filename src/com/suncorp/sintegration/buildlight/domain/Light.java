@@ -1,8 +1,9 @@
 package com.suncorp.sintegration.buildlight.domain;
 
-import com.suncorp.sintegration.buildlight.infrastructure.Driver;
-
 import java.io.IOException;
+
+import com.suncorp.sintegration.buildlight.domain.Job.BuildStatus;
+import com.suncorp.sintegration.buildlight.infrastructure.Driver;
 
 public class Light {
 
