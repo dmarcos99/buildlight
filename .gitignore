@@ -26,3 +26,11 @@ bin/.DS_Store
 .DS_Store
 
 bin/com/suncorp/sintegration/buildlight/configuration/out.html
+/dist
+/classes
+
+bin/com/suncorp/sintegration/buildlight/configuration/cashman-all.properties
+
+bin/com/suncorp/sintegration/buildlight/configuration/cashman-intg.properties
+
+bin/com/suncorp/sintegration/buildlight/configuration/cashman-unit.properties
