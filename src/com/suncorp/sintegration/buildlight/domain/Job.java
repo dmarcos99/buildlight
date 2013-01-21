@@ -1,13 +1,9 @@
 package com.suncorp.sintegration.buildlight.domain;
 
-public class Job {
+public class Job implements Comparable<Job> {
 
 	public enum BuildStatus {
-		OFF, SUCCESS, FAILURE, PROGRESS, UNKNOWN;
-		
-		public static BuildStatus getStatus(String colour) {
-			return null;
-		}
+		OFF, SUCCESS, UNKNOWN, PROGRESS, FAILURE;
 	}
 
 	private String name;
@@ -35,5 +31,16 @@ public class Job {
 
 	public void setStatus(BuildStatus status) {
 		this.status = status;
+	}
+
+	public String toString() {
+		return "Job " + name + " has a status of " + status;
+	}
+
+	@Override
+	public int compareTo(Job job) {
+		// sort by status then name
+		int statusCompare = this.status.compareTo(job.getStatus());
+		return statusCompare == 0 ? this.name.compareTo(job.getName()) : statusCompare;
 	}
 }

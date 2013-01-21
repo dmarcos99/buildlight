@@ -1,7 +1,10 @@
 package com.suncorp.sintegration.buildlight.application;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.suncorp.sintegration.buildlight.configuration.Configuration;
@@ -27,7 +30,7 @@ public class BuildStatusUpdateJob {
 	}
 
 	public void update() throws IOException {
-		Set<Job> jobs = new HashSet<Job>();
+		List<Job> jobs = new ArrayList<Job>();
 		for (String jenkinsJobName : this.jenkinsJobNames) {
 			BuildParser buildParser = BuildParserFactory.getParser(config);
 			jenkinsJobName = jenkinsJobName.trim();
@@ -49,7 +52,8 @@ public class BuildStatusUpdateJob {
 			return BuildStatus.UNKNOWN;
 	}
 
-	private Set<BuildStatus> getStatuses(Set<Job> jobs) {
+	private Set<BuildStatus> getStatuses(List<Job> jobs) {
+		Collections.sort(jobs);
 		Set<BuildStatus> statuses = new HashSet<Job.BuildStatus>();
 		for (Job job : jobs) {
 			System.out.println("Status of job " + job.getName() + " is " + job.getStatus());

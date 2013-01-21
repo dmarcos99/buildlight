@@ -10,6 +10,6 @@ public class BuildParserFactory {
 
 	public static BuildParser getParser(Configuration config) {
 		// TODO: return parser based on config
-		return new BuildParserJenkinsRegex();
+		return new BuildParserJenkinsContains();
 	}
 }

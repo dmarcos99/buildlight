@@ -1,9 +1,8 @@
 package com.suncorp.sintegration.buildlight.application;
 
-import com.suncorp.sintegration.buildlight.configuration.Configuration;
-
 import java.io.IOException;
-import java.io.PrintWriter;
+
+import com.suncorp.sintegration.buildlight.configuration.Configuration;
 
 public class BuildStatusMonitor {
 

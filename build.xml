@@ -24,7 +24,7 @@
 
 
     <!-- =================================================================== -->
-    <!-- reate required distribution directories                             -->
+    <!-- create required distribution directories                             -->
     <!-- =================================================================== -->
     <target name="prepare">
         <mkdir dir="${buildlight.dist}/lib"/>
@@ -76,7 +76,26 @@
     <!--=================================================================== -->
     <!--Compile all Java Code                                               -->
     <!--=================================================================== -->
+	<taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc" classpathref="buildlight.lib.path" />
+	
+
     <target name="compile"  depends="prepare">
+		<groovyc srcdir="${buildlight.src}"
+			destdir="${buildlight.classes}"
+			classpathref="buildlight.lib.path">
+			<javac debug="on"
+	            deprecation="on">
+	            <classpath refid="buildlight.lib.path"/>
+	        </javac>
+		</groovyc>
+        <copy toDir="${buildlight.classes}">
+            <fileset dir="${buildlight.src}">
+                <include name="**/*.properties"/>
+            </fileset>
+        </copy>
+    </target>
+	
+    <target name="compileJava"  depends="prepare">
         <mkdir dir="${buildlight.classes}" />
         <javac srcdir="${buildlight.src}"
             destdir="${buildlight.classes}"

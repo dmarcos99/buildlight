@@ -28,7 +28,7 @@ public class TestClass {
 		//List<Job> jobs1 = parser1.checkStatus("ci.jenkins-ci.org", "fix-git-configuration-on-remote-slave-8");
 		//System.out.println("" + jobs.);
 		
-		BuildParser parser = new BuildParserJenkinsRegex();
+		BuildParser parser = new BuildParserJenkinsContains();
 		
 
 		List<Job> jobs = parser.checkStatus("ci.jenkins-ci.org", "git");

@@ -34,3 +34,4 @@ bin/com/suncorp/sintegration/buildlight/configuration/cashman-all.properties
 bin/com/suncorp/sintegration/buildlight/configuration/cashman-intg.properties
 
 bin/com/suncorp/sintegration/buildlight/configuration/cashman-unit.properties
+/.settings
