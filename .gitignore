@@ -3,8 +3,6 @@ src/.DS_Store
 
 lib/.DS_Store
 
-*.jar
-
 *.class
 
 classes/.DS_Store
