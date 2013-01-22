@@ -80,6 +80,7 @@
 	
 
     <target name="compile"  depends="prepare">
+    	<mkdir dir="${buildlight.classes}" />
 		<groovyc srcdir="${buildlight.src}"
 			destdir="${buildlight.classes}"
 			classpathref="buildlight.lib.path">
